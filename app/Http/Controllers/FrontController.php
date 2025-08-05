@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shoe;
+use App\Services\FrontService;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -27,7 +28,7 @@ class FrontController extends Controller
 
     public function category($category)
     {
-        $shoes = $this->frontService->getCategoryData($category);
+        $shoes = $this->frontService->getFrontPageData($category);
         return view('front.category', compact('category'));
     }
 }
